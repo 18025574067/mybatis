@@ -17,6 +17,6 @@
     </environments>
     <mappers>
         <!--加载sql映射文件-->
-        <mapper resource="org/mybatis/example/BlogMapper.xml"/>
+        <mapper resource="UserMapper.xml"/>
     </mappers>
 </configuration>
