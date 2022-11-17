@@ -6,7 +6,7 @@
     namespace: 名称空间
 -->
 <mapper namespace="com.itheima.mapper.UserMapper">
-    <select id="selectAll" resultType="com.itheima.pojo.User">
+    <select id="selectAll" resultType="user">
         select * from tb_user;
     </select>
 
