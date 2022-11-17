@@ -1,60 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <!-- CONSOLE: 表示当前的日志信息是可以控制台输出的 -->
+    <!--
+        CONSOLE ：表示当前的日志信息是可以输出到控制台的。
+    -->
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>【%level】 %blue(%d{HH:mm:ss.SSS}) %cyan(【%thread】) %boldGreen(%logger{15}) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.itheima" level="DEBUG" additivity="false">
+        <appender-ref ref="Console"/>
+    </logger>
+
+    <root level="DEBUG">
+        <appender-ref ref="Console"/>
+    </root>
+</configuration>
+
+
+
+
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    &lt;!&ndash; CONSOLE: 表示当前的日志信息是可以控制台输出的 &ndash;&gt;
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- 输出流对象 默认 System.out白字 改为 System.err红字 -->
+        &lt;!&ndash; 输出流对象 默认 System.out白字 改为 System.err红字 &ndash;&gt;
         <target>System.out</target>
         <encoder>
-            <!--格式化输出,%d:日期;%thread:线程名;%-5level：级别,从左显示5个字符宽度;%msg:日志消息;%n:换行符-->
+            &lt;!&ndash;格式化输出,%d:日期;%thread:线程名;%-5level：级别,从左显示5个字符宽度;%msg:日志消息;%n:换行符&ndash;&gt;
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- File是输出的方向通向文件的 -->
+    &lt;!&ndash; File是输出的方向通向文件的 &ndash;&gt;
     <appender name="FILE"  class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
             <charset>utf-8</charset>>
         </encoder>
-        <!--日志输出路径-->
+        &lt;!&ndash;日志输出路径&ndash;&gt;
         <file>C:\Users\hyb123\Documents\code\itheima-date.log</file>
         <file>/home/hyb/文档/code/itheima-date.log</file>
-        <!-- 指定日志文件拆分和压缩规则-->
+        &lt;!&ndash; 指定日志文件拆分和压缩规则&ndash;&gt;
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <!--通过指定压缩文件名称，来确定分割文件方式-->
+            &lt;!&ndash;通过指定压缩文件名称，来确定分割文件方式&ndash;&gt;
             <fileNamePattern>C:\Users\hyb123\Documents\code\itheima-data2-%d{yyyy-MMdd}.log%i.gz</fileNamePattern>
-            <!-- 文件拆分大小-->
+            &lt;!&ndash; 文件拆分大小&ndash;&gt;
             <maxFileSize>1MB</maxFileSize>
         </rollingPolicy>
     </appender>
 
 
-    <!--level: 用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR     ||     ALL 和 OFF,默认 debug
-    <root> 可以包含零个或多个<appender-ref>元素，标识这个输出位置将会被本日志级别控制。-->
+    &lt;!&ndash;level: 用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR     ||     ALL 和 OFF,默认 debug
+    <root> 可以包含零个或多个<appender-ref>元素，标识这个输出位置将会被本日志级别控制。&ndash;&gt;
     <root level="all">
-        <!-- 注意: 如果此位置不配置打印日志位置，该位置就不会记录日志 -->
+        &lt;!&ndash; 注意: 如果此位置不配置打印日志位置，该位置就不会记录日志 &ndash;&gt;
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
     </root>
+</configuration>-->
+
+
+
+
+
+
+
+
+
+
+
+
+ <!--
+ P48 &#45;&#45; MyBatis 快速入门
+        1. 创建 user 表，添加数据
+
+        2. 创建模块，导入坐标
+
+        在 main 目录下的 resoures 配置文件目录下创建一个名为 logback.xml 的配置文件，粘贴一下内容：
+        <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+&lt;!&ndash;
+CONSOLE ：表示当前的日志信息是可以输出到控制台的。
+&ndash;&gt;
+<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+        <pattern>【%level】 %blue(%d{HH:mm:ss.SSS}) %cyan(【%thread】) %boldGreen(%logger{15}) - %msg %n</pattern>
+    </encoder>
+</appender>
+
+<logger name="com.itheima" level="DEBUG" additivity="false">
+    <appender-ref ref="Console"/>
+</logger>
+
+<root level="DEBUG">
+    <appender-ref ref="Console"/>
+</root>
 </configuration>
 
-        <!--
-        <?xml version="1.0" encoding="utf-8" ?>
-        <configuration>
-            &lt;!&ndash;
-                CONSOLE: 表示当前的日志信息是可以输出控制台的.
-            &ndash;&gt;
-            <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
-                <encoder>
-                    <pattern>[%level] %blue(%d{HH:mm:ss.SSS})%cyan([%thread]) %boldGreen(%logger{15}) - %msg %n</pattern>
-                </encoder>
-            </appender>
+        3. 编写 MyBatis 核心配置文件
+        在 main 目录下的 resoures 配置文件目录下创建一个名为 mybatis-config.xml 的配置文件，内容在MyBatis官网
 
-            <logger name="com.itheima" level="DEBUG" additivity="false">
-                <appender-ref ref="Console"/>
-            </logger>
+        4. 编写 sql 映射文件
 
-        </configuration>
+        在 main 目录下的 resoures 配置文件目录下创建一个名为 UserMapper.xml 的配置文件，内容在MyBatis官网
 
-
-        -->
+        5. 编码
+-->
