@@ -13,15 +13,13 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc">
-      <console name="mysql" type="STANDARD" schema="mybatis" session="Main"><![CDATA[show tables;]]></console>
+      <console name="mysql" type="STANDARD" schema="mybatis" session="Main"><![CDATA[show databases;
+
+show tables;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc" object-ref="schemas/mybatis/tables/tb_user" />
-      <object connection-id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc" object-ref="schemas/db1/tables/account" />
-      <object connection-id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc" object-ref="schemas/db1/tables/stu" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc" dataset="db1.account" active-filter-id="EMPTY_FILTER" />
