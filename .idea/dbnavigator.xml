@@ -15,6 +15,7 @@
     <connection id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc">
       <console name="mysql" type="STANDARD" schema="mybatis" session="Main"><![CDATA[show databases;
 
+
 show tables;]]></console>
     </connection>
   </component>
