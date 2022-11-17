@@ -9,6 +9,10 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import java.io.InputStream;
 import java.util.List;
 
+/**
+ * MyBatis 快速入门代码
+ */
+
 public class MyBatisDemo {
     public static void main(String[] args) throws Exception {
         // 1. 加载mybatis核心配置文件, 获取sqlSessionFactory.
