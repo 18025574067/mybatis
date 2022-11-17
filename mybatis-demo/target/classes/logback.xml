@@ -70,65 +70,35 @@
 
 
 
-        <!--
-        <?xml version="1.0" encoding="utf-8" ?>
-        <configuration>
-            &lt;!&ndash;
-                CONSOLE: 表示当前的日志信息是可以输出控制台的.
-            &ndash;&gt;
-            <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
-                <encoder>
-                    <pattern>[%level] %blue(%d{HH:mm:ss.SSS})%cyan([%thread]) %boldGreen(%logger{15}) - %msg %n</pattern>
-                </encoder>
-            </appender>
-
-            <logger name="com.itheima" level="DEBUG" additivity="false">
-                <appender-ref ref="Console"/>
-            </logger>
-
-        </configuration>
-
-
-        -->
 
 
 
+ <!--
+ P48 &#45;&#45; MyBatis 快速入门
+        1. 创建 user 表，添加数据
 
+        2. 创建模块，导入坐标
 
-
-
-
-
-
-
-<!--
-
+        在 main 目录下的 resoures 配置文件目录下创建一个名为 logback.xml 的配置文件，粘贴一下内容：
+        <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
 &lt;!&ndash;
-P48 &#45;&#45; MyBatis 快速入门
-1. 创建 user 表，添加数据
-
-2. 创建模块，导入坐标
-
-   在 main 目录下的 resoures 配置文件目录下创建一个名为 logback.xml 的配置文件，粘贴一下内容：
-   <?xml version="1.0" encoding="UTF-8"?>
-   <configuration>
-       &lt;!&ndash;
-           CONSOLE ：表示当前的日志信息是可以输出到控制台的。
-       &ndash;&gt;
+CONSOLE ：表示当前的日志信息是可以输出到控制台的。
+&ndash;&gt;
 <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
-<encoder>
-    <pattern>【%level】 %blue(%d{HH:mm:ss.SSS}) %cyan(【%thread】) %boldGreen(%logger{15}) - %msg %n</pattern>
-</encoder>
+    <encoder>
+        <pattern>【%level】 %blue(%d{HH:mm:ss.SSS}) %cyan(【%thread】) %boldGreen(%logger{15}) - %msg %n</pattern>
+    </encoder>
 </appender>
 
 <logger name="com.itheima" level="DEBUG" additivity="false">
-<appender-ref ref="Console"/>
+    <appender-ref ref="Console"/>
 </logger>
 
 <root level="DEBUG">
-<appender-ref ref="Console"/>
+    <appender-ref ref="Console"/>
 </root>
-        </configuration>
+</configuration>
 
         3. 编写 MyBatis 核心配置文件
         在 main 目录下的 resoures 配置文件目录下创建一个名为 mybatis-config.xml 的配置文件，内容在MyBatis官网
@@ -138,6 +108,4 @@ P48 &#45;&#45; MyBatis 快速入门
         在 main 目录下的 resoures 配置文件目录下创建一个名为 UserMapper.xml 的配置文件，内容在MyBatis官网
 
         5. 编码
-
-
-&ndash;&gt;-->
+-->
