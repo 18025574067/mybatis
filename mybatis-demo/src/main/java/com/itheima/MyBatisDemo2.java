@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
  */
 
 public class MyBatisDemo2 {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         // 1. 加载mybatis核心配置文件, 获取sqlSessionFactory.
         String resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
