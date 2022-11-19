@@ -29,7 +29,7 @@
         <!--加载sql映射文件-->
 <!--        <mapper resource="com/itheima/mapper/UserMapper.xml"/>-->
 
-        <!--mapper代理方法-->
+        <!--用了mapper代理方法, 可以使用包扫描方式简化代码-->
         <package name="com.itheima.mapper"/>
     </mappers>
 </configuration>

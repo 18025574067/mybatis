@@ -25,7 +25,7 @@ public class MyBatisDemo {
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
         // 3. 执行sql
-        List<User> users = sqlSession.selectList("test.selectAll");
+        List<User> users = sqlSession.selectList("com.itheima.mapper.UserMapper.selectAll");
         System.out.println(users);
 
         // 4. 释放资源

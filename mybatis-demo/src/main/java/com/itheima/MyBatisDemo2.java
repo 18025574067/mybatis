@@ -27,6 +27,7 @@ public class MyBatisDemo2 {
 
         // 3. 执行sql
 //        List<User> users = sqlSession.selectList("test.selectAll");
+
         // 3.1 获取UserMapper接口的代理对象
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         List<User> users = userMapper.selectAll();
