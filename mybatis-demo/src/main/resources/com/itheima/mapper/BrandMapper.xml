@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace: 名称空间
+-->
+<mapper namespace="com.itheima.mapper.BrandMapper">
+
+    <!--statement语句-->
+    <!--
+    数据库表的 字段名称 和 实体类的属性 名称不一致, 则不能封装数据.
+    * 起别名:  对不一样的列名起别名, 让别名和实体类的属性名对应上.
+        * 缺点: 每次查询都要起别名, 不方便.
+    *
+    -->
+    <select id="selectAll" resultType="brand">
+        select
+        id,
+        brand_name as brandName,
+        company_name as companyName,
+        ordered,
+        description,
+        status
+        from tb_brand;
+    </select>
+<!--    <select id="selectAll" resultType="brand">
+        select * from tb_brand;
+    </select>-->
+</mapper>

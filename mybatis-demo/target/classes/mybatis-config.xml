@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--配置各个标签时, 需要遵守前后顺序-->
 
     <!--包名: 起别名后, 后期写返回类型resultTypej时user可以区别大小名.-->
     <typeAliases>
