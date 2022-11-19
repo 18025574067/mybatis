@@ -13,11 +13,16 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc">
-      <console name="mysql" type="STANDARD" schema="mybatis" session="Main" />
+      <console name="mysql" type="STANDARD" schema="mybatis" session="Main"><![CDATA[insert into tb_user (username, `password`, gender, addr) values ('赵六', '444', '男', '上海');
+
+
+select * from tb_user;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc" object-ref="schemas/mybatis/tables/tb_user" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc" dataset="db1.account" active-filter-id="EMPTY_FILTER" />
