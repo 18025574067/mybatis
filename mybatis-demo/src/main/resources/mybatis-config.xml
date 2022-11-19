@@ -13,6 +13,7 @@
     <!--
     environments: 配置数据库连接环境信息, 可以配置多个environment, 通过default属性切换不同的environment.
     -->
+    <!--default, 默认连接环境-->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -24,7 +25,21 @@
                 <property name="password" value="mysql"/>
             </dataSource>
         </environment>
+
+        <!--多个连接环境, test-->
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--数据库的连接信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///mybatis?useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="mysql"/>
+            </dataSource>
+        </environment>
     </environments>
+
+
     <mappers>
         <!--加载sql映射文件-->
 <!--        <mapper resource="com/itheima/mapper/UserMapper.xml"/>-->
