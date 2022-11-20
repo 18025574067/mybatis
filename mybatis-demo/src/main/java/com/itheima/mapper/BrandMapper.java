@@ -10,6 +10,6 @@ public interface BrandMapper {
     /**
      * 查询所有
      */
-    public List<Brand> selectAll();
+    List<Brand> selectAll();
 
 }
