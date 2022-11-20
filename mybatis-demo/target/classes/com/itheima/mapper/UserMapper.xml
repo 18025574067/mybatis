@@ -6,13 +6,8 @@
     namespace: 名称空间
 -->
 <mapper namespace="com.itheima.mapper.UserMapper">
-
     <!--statement语句-->
     <select id="selectAll" resultType="user">
         select * from tb_user;
     </select>
-    <select id="selectById" resultType="user">
-        select * from tb_user where id=1;
-    </select>
-
 </mapper>
