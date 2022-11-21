@@ -69,6 +69,12 @@ public class MyBatisTest {
         companyName = "%" + companyName + "%";
         brandName = "%" + brandName + "%";
 
+        // 封装对象
+        Brand brand = new Brand();
+        brand.setStatus(status);
+        brand.setCompanyName(companyName);
+        brand.setBrandName(brandName);
+
         // 1. 获取sqlSessionFactory
         String resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
@@ -81,7 +87,8 @@ public class MyBatisTest {
         BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
 
         // 4. 执行方法
-        List<Brand> brands = brandMapper.selectByCondition(status, companyName, brandName);
+//        List<Brand> brands = brandMapper.selectByCondition(status, companyName, brandName);
+        List<Brand> brands = brandMapper.selectByCondition(brand);
         System.out.println(brands);
 
         // 5. 释放资源
