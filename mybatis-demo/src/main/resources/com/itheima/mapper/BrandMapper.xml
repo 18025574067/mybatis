@@ -10,21 +10,39 @@
     <!--statement语句-->
     <!--
     数据库表的 字段名称 和 实体类的属性 名称不一致, 则不能封装数据.
-    * 起别名:  对不一样的列名起别名, 让别名和实体类的属性名对应上.
-        * 缺点: 每次查询都要起别名, 不方便.
-            * sql片段.
+        * 起别名:  对不一样的列名起别名, 让别名和实体类的属性名对应上.
+            * 缺点: 每次查询都要起别名, 不方便.
+                * sql片段.
+                    * 不灵活.
+        * resultMap:
+
     -->
 
+    <resultMap id="brandResultMap" type="brand">
+        <result column="brand_name" property="brandName"/>
+        <result column="company_name" property="companyName"/>
+    </resultMap>
+
+
+
     <!--sql片段-->
+<!--
+    <select id="selectAll" resultType="brand">
+        select
+        <include refid="brand_column" />
+        from tb_brand;
+    </select>
     <sql id="brand_column">id, brand_name as brandName, company_name as companyName, ordered, description, status</sql>
-
-
     <select id="selectAll" resultType="brand">
         select
             <include refid="brand_column" />
         from tb_brand;
     </select>
-<!--    <select id="selectAll" resultType="brand">
+-->
+
+    <select id="selectAll" resultMap="brandResultMap">
         select * from tb_brand;
-    </select>-->
+    </select>
+
+
 </mapper>
