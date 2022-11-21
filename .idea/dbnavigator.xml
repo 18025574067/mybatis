@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc">
-      <console name="mysql" type="STANDARD" schema="mybatis" session="Main"><![CDATA[-- 删除tb_brand表
+      <console name="mysql" type="STANDARD" schema="mybatis" session="Main">-- 删除tb_brand表
 drop table if exists tb_brand;
 
 -- 创建tb_brand表
@@ -38,11 +38,13 @@ values('三只松鼠', '三只松鼠股份有限公司', 5, '好吃不上火', 0
 	('华为', '华为技术有限公司', 100, '华为致力于把数字世界带入每个人,每个家庭, 每个组织,构建万物互联的智能世界', 1),
 	('小米', '小米科技有限公司', 50, 'are you ok', 1);
 
-select * from tb_brand;]]></console>
+select * from tb_brand;</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc" object-ref="schemas/mybatis/tables/tb_brand" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="1dd11eed-cdb5-4a78-86a0-32ecffb880bc" dataset="mybatis.tb_brand" active-filter-id="EMPTY_FILTER" />
