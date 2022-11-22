@@ -78,7 +78,7 @@ public class MyBatisTest {
         brand.setBrandName(brandName);*/
         Map map = new HashMap();
 //        map.put("status", status);
-//        map.put("companyName", companyName);
+        map.put("companyName", companyName);
 //        map.put("brandName", brandName);
 
         // 1. 获取sqlSessionFactory

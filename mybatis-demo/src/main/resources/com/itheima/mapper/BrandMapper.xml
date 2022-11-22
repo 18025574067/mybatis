@@ -99,11 +99,12 @@
                 * test 逻辑表达式
             * 问题
                 * 恒等式
+                * <where> 代替 where
     -->
     <select id="selectByCondition" resultMap="brandResultMap">
         select *
         from tb_brand
-        where 1 = 1
+       <!-- where 1 = 1
         <if test="status != null">
             and status = #{status}
         </if>
@@ -111,8 +112,18 @@
             and company_name like #{companyName}
         </if>
         <if test="brandName != null and brandName != '' ">
-            and brand_name like #{brandName};
+            and brand_name like #{brandName}
+        </if>-->
+        <where>
+        <if test="status != null">
+            and status = #{status}
         </if>
-
+        <if test="companyName != null and companyName != '' ">
+            and company_name like #{companyName}
+        </if>
+        <if test="brandName != null and brandName != '' ">
+            and brand_name like #{brandName}
+        </if>
+        </where>
     </select>
 </mapper>
