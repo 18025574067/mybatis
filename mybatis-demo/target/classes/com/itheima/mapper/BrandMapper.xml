@@ -104,26 +104,67 @@
     <select id="selectByCondition" resultMap="brandResultMap">
         select *
         from tb_brand
-       <!-- where 1 = 1
-        <if test="status != null">
-            and status = #{status}
-        </if>
-        <if test="companyName != null and companyName != '' ">
-            and company_name like #{companyName}
-        </if>
-        <if test="brandName != null and brandName != '' ">
-            and brand_name like #{brandName}
-        </if>-->
+        <!-- where 1 = 1
+         <if test="status != null">
+             and status = #{status}
+         </if>
+         <if test="companyName != null and companyName != '' ">
+             and company_name like #{companyName}
+         </if>
+         <if test="brandName != null and brandName != '' ">
+             and brand_name like #{brandName}
+         </if>-->
         <where>
-        <if test="status != null">
-            and status = #{status}
-        </if>
-        <if test="companyName != null and companyName != '' ">
-            and company_name like #{companyName}
-        </if>
-        <if test="brandName != null and brandName != '' ">
-            and brand_name like #{brandName}
-        </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="companyName != null and companyName != '' ">
+                and company_name like #{companyName}
+            </if>
+            <if test="brandName != null and brandName != '' ">
+                and brand_name like #{brandName}
+            </if>
+        </where>
+    </select>
+
+
+    <!--
+        单条件动态查询
+    -->
+    <select id="selectByConditionSingle" resultMap="brandResultMap">
+        select *
+        from tb_brand
+<!--        where
+        <choose>&lt;!&ndash;相当于switch&ndash;&gt;
+            <when test="status != null">&lt;!&ndash;相当于case&ndash;&gt;
+                status = #{status}
+            </when>
+            <when test="companyName != null and companyName != '' ">
+                company_name like #{companyName}
+            </when>
+            <when test="brandName != null and brandName != '' ">
+                brand_name like #{brandName}
+            </when>
+            <otherwise>&lt;!&ndash;相当于default&ndash;&gt;
+                1 = 1
+            </otherwise>
+        </choose>-->
+
+        <where>
+            <choose><!--相当于switch-->
+                <when test="status != null"><!--相当于case-->
+                    status = #{status}
+                </when>
+                <when test="companyName != null and companyName != '' ">
+                    company_name like #{companyName}
+                </when>
+                <when test="brandName != null and brandName != '' ">
+                    brand_name like #{brandName}
+                </when>
+                <otherwise><!--相当于default-->
+                    1 = 1
+                </otherwise>
+            </choose>
         </where>
     </select>
 </mapper>
