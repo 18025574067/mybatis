@@ -79,7 +79,7 @@ public class MyBatisTest {
         Map map = new HashMap();
 //        map.put("status", status);
 //        map.put("companyName", companyName);
-        map.put("brandName", brandName);
+//        map.put("brandName", brandName);
 
         // 1. 获取sqlSessionFactory
         String resource = "mybatis-config.xml";
