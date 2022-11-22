@@ -25,8 +25,6 @@ public interface BrandMapper {
      *      1. 散装参数: 如果方法中有多个参数, 需要使用@Parm("SQL参数占位符")
      *      2. 对象参数
      *      3. map集合参数
-     *
-     *
      * @param status
      * @param companyName
      * @param brandName
