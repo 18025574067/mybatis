@@ -200,7 +200,7 @@
 
     <!--  根据id删除  -->
     <delete id="deleteById">
-delete from tb_brand where id = #{};
+        delete from tb_brand where id = #{};
     </delete>
 
 </mapper>

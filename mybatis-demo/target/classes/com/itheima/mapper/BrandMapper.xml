@@ -168,13 +168,13 @@
         </where>
     </select>
 
-
+    <!-- 添加   -->
     <insert id="add" useGeneratedKeys="true" keyProperty="id">
         insert into tb_brand (brand_name, company_name, ordered, description, status)
         value(#{brandName}, #{companyName}, #{ordered}, #{description}, #{status})
     </insert>
 
-
+    <!--  修改  -->
     <update id="update">
         update tb_brand
         <set>
@@ -197,5 +197,10 @@
         where
         id = #{id}
     </update>
+
+    <!--  根据id删除  -->
+    <delete id="deleteById">
+        delete from tb_brand where id = #{};
+    </delete>
 
 </mapper>
