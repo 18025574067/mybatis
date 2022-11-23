@@ -134,21 +134,21 @@
     <select id="selectByConditionSingle" resultMap="brandResultMap">
         select *
         from tb_brand
-<!--        where
-        <choose>&lt;!&ndash;相当于switch&ndash;&gt;
-            <when test="status != null">&lt;!&ndash;相当于case&ndash;&gt;
-                status = #{status}
-            </when>
-            <when test="companyName != null and companyName != '' ">
-                company_name like #{companyName}
-            </when>
-            <when test="brandName != null and brandName != '' ">
-                brand_name like #{brandName}
-            </when>
-            <otherwise>&lt;!&ndash;相当于default&ndash;&gt;
-                1 = 1
-            </otherwise>
-        </choose>-->
+        <!--        where
+                <choose>&lt;!&ndash;相当于switch&ndash;&gt;
+                    <when test="status != null">&lt;!&ndash;相当于case&ndash;&gt;
+                        status = #{status}
+                    </when>
+                    <when test="companyName != null and companyName != '' ">
+                        company_name like #{companyName}
+                    </when>
+                    <when test="brandName != null and brandName != '' ">
+                        brand_name like #{brandName}
+                    </when>
+                    <otherwise>&lt;!&ndash;相当于default&ndash;&gt;
+                        1 = 1
+                    </otherwise>
+                </choose>-->
 
         <where>
             <choose><!--相当于switch-->
@@ -168,11 +168,39 @@
         </where>
     </select>
 
-
-    <insert id="add">
+    <!-- 添加   -->
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
         insert into tb_brand (brand_name, company_name, ordered, description, status)
         value(#{brandName}, #{companyName}, #{ordered}, #{description}, #{status})
     </insert>
 
+    <!--  修改  -->
+    <update id="update">
+        update tb_brand
+        <set>
+            <if test="companyName != null and companyName != '' ">
+                company_name = #{companyName},
+            </if>
+            <if test="brandName != null and brandName != '' ">
+                brand_name = #{brandName},
+            </if>
+            <if test="ordered != null">
+                ordered = #{ordered},
+            </if>
+            <if test="description != null and description != '' ">
+                description = #{description},
+            </if>
+            <if test="status != null">
+                status = #{status}
+            </if>
+        </set>
+        where
+        id = #{id}
+    </update>
+
+    <!--  根据id删除  -->
+    <delete id="deleteById">
+delete from tb_brand where id = #{};
+    </delete>
 
 </mapper>
