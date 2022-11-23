@@ -212,7 +212,6 @@ public class MyBatisTest {
     }
 
 
-
     @Test
     public void testAdd2() throws IOException {
         // 接收参数
