@@ -38,23 +38,16 @@
 
 
     <!--sql片段-->
-    <!--
-        <select id="selectAll" resultType="brand">
-            select
-            <include refid="brand_column" />
-            from tb_brand;
-        </select>
-        <sql id="brand_column">id, brand_name as brandName, company_name as companyName, ordered, description, status</sql>
-        <select id="selectAll" resultType="brand">
-            select
-                <include refid="brand_column" />
-            from tb_brand;
-        </select>
-    -->
-
-    <select id="selectAll" resultMap="brandResultMap">
-        select * from tb_brand;
+    <sql id="brand_column">id, brand_name as brandName, company_name as companyName, ordered, description, status</sql>
+    <select id="selectAll" resultType="brand">
+        select
+        <include refid="brand_column"/>
+        from tb_brand;
     </select>
+
+    <!--    <select id="selectAll" resultMap="brandResultMap">
+            select * from tb_brand
+        </select>-->
 
 
     <!--
@@ -199,8 +192,8 @@
     </update>
 
     <!--  根据id删除  -->
-    <delete id="deleteById">
+<!--    <delete id="deleteById">
         delete from tb_brand where id = #{};
-    </delete>
+    </delete>-->
 
 </mapper>

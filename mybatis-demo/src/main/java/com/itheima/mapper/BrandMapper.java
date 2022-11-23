@@ -24,10 +24,6 @@ public interface BrandMapper {
      * 2. 对象参数
      * 3. map集合参数
      *
-     * @param status
-     * @param companyName
-     * @param brandName
-     * @return
      */
     // List<Brand> selectByCondition(@Param("status") int status, @Param("companyName") String companyName, @Param("brandName") String brandName);
     // List<Brand> selectByCondition(Brand brand);
@@ -52,6 +48,6 @@ public interface BrandMapper {
      * 根据id删除
      * @param id
      */
-    void deleteById(int id);
-
+  /*  void deleteById(int id);
+*/
 }
