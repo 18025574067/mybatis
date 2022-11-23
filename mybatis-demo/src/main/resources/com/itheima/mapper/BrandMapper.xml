@@ -167,4 +167,12 @@
             </choose>
         </where>
     </select>
+
+
+    <insert id="add">
+        insert into tb_brand (brand_name, company_name, ordered, description, status)
+        value(#{brandName}, #{companyName}, #{ordered}, #{description}, #{status})
+    </insert>
+
+
 </mapper>

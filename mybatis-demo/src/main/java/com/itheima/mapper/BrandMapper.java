@@ -36,5 +36,6 @@ public interface BrandMapper {
 
     List<Brand> selectByConditionSingle(Brand brand);
 
+    void add(Brand brand);
 
 }
