@@ -18,8 +18,8 @@
         select *
         from tb_user
         where
-            username = #{username}
-        and password = #{password}
+            username = #{param1}
+        and password = #{param2}
     </select>
 
 

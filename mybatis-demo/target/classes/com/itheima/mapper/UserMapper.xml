@@ -10,4 +10,17 @@
     <select id="selectAll" resultType="user">
         select * from tb_user;
     </select>
+
+
+
+
+    <select id="select" resultType="com.itheima.pojo.User">
+        select *
+        from tb_user
+        where
+            username = #{param1}
+        and password = #{param2}
+    </select>
+
+
 </mapper>

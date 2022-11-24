@@ -18,10 +18,14 @@ public interface UserMapper {
              * 4. List
              * 5. Array
              * 6. 其他类型
-         * 多个参数
-
-
+         * 多个参数: 封装为Map集合
+             * map.put("arg0", 参数值1)
+             * map.put("param1", 参数值1)
+             * map.put("arg1", 参数值2)
+             * map.put("param2", 参数值2)
      */
-    User select(@Param("username") String username, @Param("password") String password);
+//    User select(@Param("username") String username, @Param("password") String password);
+//    User select(String username, String password);
+    User select(String username, String password);
 
 }
