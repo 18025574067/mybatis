@@ -261,9 +261,9 @@ public class MyBatisTest {
     @Test
     public void testUpdate() throws IOException {
         // 接收参数
-        int status = 0;
-        String companyName = "波导";
-        String brandName = "波导手机222";
+        int status = 1;
+        String companyName = "波导888";
+        String brandName = "波导手机222888";
         int ordered = 500;
         String description = "波导手机, 手机中的战斗机";
         int id = 5;
@@ -301,7 +301,7 @@ public class MyBatisTest {
     }
 
 
- /*   @Test
+    @Test
     public void testDelete() throws IOException {
         // 接收参数
         int id = 12;
@@ -313,7 +313,6 @@ public class MyBatisTest {
 
         // 2. 获取sqlSession对象
         SqlSession sqlSession = sqlSessionFactory.openSession();
-//        SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
         // 3. 获取Mapper接口的代理对象
         BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
@@ -326,5 +325,5 @@ public class MyBatisTest {
 
         // 5. 释放资源
         sqlSession.close();
-    }*/
+    }
 }

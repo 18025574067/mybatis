@@ -23,7 +23,6 @@ public interface BrandMapper {
      * 1. 散装参数: 如果方法中有多个参数, 需要使用@Parm("SQL参数占位符")
      * 2. 对象参数
      * 3. map集合参数
-     *
      */
     // List<Brand> selectByCondition(@Param("status") int status, @Param("companyName") String companyName, @Param("brandName") String brandName);
     // List<Brand> selectByCondition(Brand brand);
@@ -33,12 +32,14 @@ public interface BrandMapper {
 
     /**
      * 添加
+     *
      * @param brand
      */
     void add(Brand brand);
 
     /**
      * 修改
+     *
      * @param brand
      * @return
      */
@@ -46,8 +47,8 @@ public interface BrandMapper {
 
     /**
      * 根据id删除
+     *
      * @param id
      */
-  /*  void deleteById(int id);
-*/
+    void deleteById(int id);
 }
