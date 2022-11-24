@@ -326,4 +326,33 @@ public class MyBatisTest {
         // 5. 释放资源
         sqlSession.close();
     }
+
+    @Test
+    public void testDeletes() throws IOException {
+        // 接收参数
+        int[] ids = {11};
+
+        // 1. 获取sqlSessionFactory
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        // 2. 获取sqlSession对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        // 3. 获取Mapper接口的代理对象
+        BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
+
+        // 4. 执行方法
+        brandMapper.deleteByIds(ids);
+
+        // 事务提交
+        sqlSession.commit();
+
+        // 5. 释放资源
+        sqlSession.close();
+    }
+
+
+
 }
