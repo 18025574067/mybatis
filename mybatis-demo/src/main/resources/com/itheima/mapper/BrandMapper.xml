@@ -204,7 +204,7 @@
      -->
     <delete id="deleteByIds">
         delete from tb_brand where id in
-        <foreach collection="ids" item="id" separator=",">
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
             #{id}
         </foreach>
     </delete>

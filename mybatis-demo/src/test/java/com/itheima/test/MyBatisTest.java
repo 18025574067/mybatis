@@ -330,7 +330,7 @@ public class MyBatisTest {
     @Test
     public void testDeletes() throws IOException {
         // 接收参数
-        int[] ids = {11};
+        int[] ids = {14};
 
         // 1. 获取sqlSessionFactory
         String resource = "mybatis-config.xml";
@@ -352,7 +352,6 @@ public class MyBatisTest {
         // 5. 释放资源
         sqlSession.close();
     }
-
 
 
 }
