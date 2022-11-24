@@ -57,5 +57,6 @@ public interface BrandMapper {
     /**
      * 批量删除
      */
-    void deleteByIds(@Param("ids") int[] ids);
+//    void deleteByIds(@Param("ids") int[] ids);
+    void deleteByIds(int[] ids);
 }
