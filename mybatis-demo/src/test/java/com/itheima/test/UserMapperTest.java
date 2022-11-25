@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashSet;
 
 public class UserMapperTest {
     @Test
@@ -30,7 +31,8 @@ public class UserMapperTest {
         String username = "zhangsan";
         String password = "123";
 
-        User user = userMapper.select(username, password);
+//        User user = userMapper.select(username, password);
+        User user = userMapper.select(new HashSet());
 
         System.out.println(user);
 
