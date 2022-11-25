@@ -32,7 +32,8 @@ public class UserMapperTest {
         String password = "123";
 
 //        User user = userMapper.select(username, password);
-        User user = userMapper.select(new HashSet());
+//        User user = userMapper.select(new HashSet());
+        User user = userMapper.selectById(1);
 
         System.out.println(user);
 
